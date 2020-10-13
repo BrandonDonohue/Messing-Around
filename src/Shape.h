@@ -4,18 +4,71 @@
 
 class Shape {
 public:
+	Shape() {
+		blocks = { {' ', ' ', ' '},
+				   {' ', ' ', ' '},
+				   {' ', ' ', ' '},
+				   {' ', ' ', ' '}, };
+	}
+
+	Shape(int type) {
+		switch (type) {
+			case 0:
+				blocks = { {' ', 'X', ' '},
+						   {' ', 'X', ' '},
+						   {' ', 'X', ' '},
+						   {' ', 'X', ' '}, };
+				break;
+
+			case 1:
+				blocks = { {' ', ' ', ' '},
+						   {' ', ' ', ' '},
+						   {' ', 'X', 'X'},
+						   {' ', 'X', 'X'}, };
+				break;
+
+			case 2:
+				blocks = { {' ', ' ', ' '},
+						   {' ', 'X', ' '},
+						   {' ', 'X', ' '},
+						   {' ', 'X', 'X'}, };
+				break;
+
+			case 3:
+				blocks = { {' ', ' ', ' '},
+						   {' ', 'X', ' '},
+						   {' ', 'X', ' '},
+						   {'X', 'X', ' '}, };
+				break;
+
+			case 4:
+				blocks = { {' ', ' ', ' '},
+						   {' ', ' ', ' '},
+						   {'X', 'X', ' '},
+						   {' ', 'X', 'X'}, };
+				break;
+
+			case 5:
+				blocks = { {' ', ' ', ' '},
+						   {' ', ' ', ' '},
+						   {' ', 'X', 'X'},
+						   {'X', 'X', ' '}, };
+				break;
+
+			case 6:
+				blocks = { {' ', ' ', ' '},
+						   {' ', ' ', ' '},
+						   {' ', 'X', ' '},
+						   {'X', 'X', 'X'}, };
+				break;
+		}
+
+	}
+
+
+	void drawShape();
+	std::vector<std::vector<char>> getBlocks();
 
 private:
 	std::vector<std::vector<char>> blocks;
-	enum layouts {
-		straight,
-		box,
-		L,
-		backL,
-		Z,
-		backZ,
-		hat
-	};
 };
-
-std::ostream& operator<<(std::ostream& os, Shape& S);

@@ -1,4 +1,6 @@
-﻿  main.cpp
-  Shape.cpp
+﻿  Shape.cpp
+E:\coding\MessingAround\MessingAround\src\Shape.cpp(8,20): warning C4018: '<': signed/unsigned mismatch
+E:\coding\MessingAround\MessingAround\src\Shape.cpp(9,21): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
   Generating Code...
   MessingAround.vcxproj -> E:\coding\MessingAround\MessingAround\Debug\MessingAround.exe
