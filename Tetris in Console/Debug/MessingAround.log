@@ -1,0 +1,4 @@
+﻿  GameMangaer.cpp
+E:\coding\MessingAround\MessingAround\src\GameMangaer.cpp(4,28): warning C4018: '<': signed/unsigned mismatch
+E:\coding\MessingAround\MessingAround\src\GameMangaer.cpp(5,29): warning C4018: '<': signed/unsigned mismatch
+  MessingAround.vcxproj -> E:\coding\MessingAround\MessingAround\Debug\MessingAround.exe
