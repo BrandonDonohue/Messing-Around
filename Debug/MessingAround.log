@@ -1,8 +1,0 @@
-﻿  GameMangaer.cpp
-E:\coding\MessingAround\MessingAround\src\GameMangaer.cpp(4,20): warning C4018: '<': signed/unsigned mismatch
-E:\coding\MessingAround\MessingAround\src\GameMangaer.cpp(5,21): warning C4018: '<': signed/unsigned mismatch
-  Shape.cpp
-E:\coding\MessingAround\MessingAround\src\Shape.cpp(8,20): warning C4018: '<': signed/unsigned mismatch
-E:\coding\MessingAround\MessingAround\src\Shape.cpp(9,21): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  MessingAround.vcxproj -> E:\coding\MessingAround\MessingAround\Debug\MessingAround.exe
