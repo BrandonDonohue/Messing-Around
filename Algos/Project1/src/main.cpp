@@ -8,6 +8,7 @@ void reset(int input[]) {
 }
 
 void print(int input[]) {
+	std::cout << "Test Array: " << std::endl;
 	for (int index = 0; index < 10; index++) {
 		std::cout << input[index] << ", ";
 	}
@@ -17,23 +18,47 @@ void print(int input[]) {
 
 int main() {
 	int test[] = { 3, 4, 7, 5, 8, 1, 0, 9, 2, 6 };
-
-	std::cout << "Test Array: " << std::endl;
-	print(test);
-
+	int n = sizeof(test) / sizeof(test[0]);
 
 	Sorting s;
-	s.BubbleSort(test);
+
+
+	print(test);
+	s.BubbleSort(test, n);
 	print(test);
 	reset(test);
 
-	s.SelectionSort(test);
+	print(test);
+	s.SelectionSort(test, n);
 	print(test);
 	reset(test);
 
-	s.InsertionSort(test);
+	print(test);
+	s.InsertionSort(test, n);
 	print(test);
 	reset(test);
+
+	print(test);
+	std::cout << "Quick Sort: " << std::endl;
+	s.QuickSort(test, 0, n - 1);
+	print(test);
+	reset(test);
+
+	//print(test);
+	//std::cout << "Merge Sort: " << std::endl;
+	//s.MergeSort(test, n);
+	//print(test);
+	//reset(test);
+
+	//print(test);
+	//s.ShellSort(test, n);
+	//print(test);
+	//reset(test);
+
+	//print(test);
+	//s.HeapSort(test, n);
+	//print(test);
+	//reset(test);
 
 
 }
