@@ -97,19 +97,99 @@ int* Sorting::MergeSort(int input[], int left, int right) {
 }
 
 void Sorting::Merge(int input[], int left, int middle, int right){
-	
+	int sizeOfLeft = middle - left + 1;
+	int sizeOfRight = right - middle;
+
+	std::vector<int> tempL(sizeOfLeft), tempR(sizeOfRight);
+
+	for (int index = 0; index < sizeOfLeft; index++) {
+		tempL[index] = input[left + index];
+	}
+
+	for (int index = 0; index < sizeOfRight; index++) {
+		tempR[index] = input[middle + 1 + index];
+	}
+
+	int i = 0;
+	int j = 0;
+	int k = left;
+
+	while (i < sizeOfLeft && j < sizeOfRight) {
+		if (tempL[i] <= tempR[j]) {
+			input[k] = tempL[i];
+			i++;
+		}
+		else {
+			input[k] = tempR[j];
+			j++;
+		}
+
+		k++;
+	}
+
+	while (i < sizeOfLeft) {
+		input[k] = tempL[i];
+		i++;
+		k++;
+	}
+
+	while (j < sizeOfRight) {
+		input[k] = tempR[j];
+		j++;
+		k++;
+	}
 }
 
 
 
-int* Sorting::ShellSort(int input[]) {
+int* Sorting::ShellSort(int input[], int n) {
 	std::cout << "Shell Sort:" << std::endl;
+	for (int gap = n / 2; gap > 0; gap /= 2) {
+		for (int index = gap; index < n; index += 1) {
+			int temp = input[index];
+
+			int j;
+			for (j = index; j >= gap && input[j - gap] > temp; j -= gap) {
+				input[j] = input[j - gap];
+			}
+
+			input[j] = temp;
+		}
+	}
 	return input;
 }
 
-int* Sorting::HeapSort(int input[]) {
+
+
+int* Sorting::HeapSort(int input[], int n) {
 	std::cout << "Heap Sort: " << std::endl;
+	for (int index = n / 2 - 1; index >= 0; index--) {
+		Heapify(input, n, index);
+	}
+
+	for (int index = n - 1; index > 0; index--) {
+		Swap(&input[0], &input[index]);
+		Heapify(input, index, 0);
+	}
 	return input;
+}
+
+void Sorting::Heapify(int input[], int n, int index) {
+	int largest = index;
+	int left = 2 * index + 1;
+	int right = 2 * index + 2;
+
+	if (left < n && input[left] > input[largest])
+		largest = left;
+
+	if (right < n && input[right] > input[largest])
+		largest = right;
+
+	if (largest != index) {
+		Swap(&input[index], &input[largest]);
+
+		Heapify(input, n, largest);
+	}
 }
 
 
